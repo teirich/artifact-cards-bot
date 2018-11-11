@@ -55,7 +55,12 @@ fun main(args: Array<String>) {
 
     val found: Card? = cardRepository.getCard("Meepo")
     println("Found? (${found})")
+    val found2: Card? = cardRepository.getCard("Divided We Stand")
+    println("Found2? (${found2})")
+    val spell: Card? = cardRepository.getCard("Coup de Grace")
+    println("Spell ($spell)")
+    val item: Card? = cardRepository.getCard("Book of the Dead")
+    println("Item ($item)")
 
     commentListener.startListening().subscribe { match -> redditService.replyToComment(match) }
-
 }

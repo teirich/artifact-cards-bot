@@ -56,7 +56,21 @@ data class Card(@SerializedName("card_id") val cardId: Long,
                 @SerializedName("illustrator") val illustrator: String,
                 @SerializedName("rarity") val rarity: String,
                 @SerializedName("is_blue") val isBlue: Boolean,
+                @SerializedName("is_black") val isBlack: Boolean,
+                @SerializedName("is_red") val isRed: Boolean,
+                @SerializedName("is_green") val isGreen: Boolean,
                 @SerializedName("item_def") val itemDef: Long,
                 @SerializedName("attack") val attack: Int,
                 @SerializedName("hit_points") val hitPoints: Int,
-                @SerializedName("references") val references: Array<Reference>)
+                @SerializedName("mana_cost") val manaCost: Int,
+                @SerializedName("sub_type") val subType: String,
+                @SerializedName("gold_cost") val goldCost: Int,
+                @SerializedName("references") val references: Array<Reference>) {
+    fun getColor(): String? {
+        if(isBlue) return "Blue"
+        if(isBlack) return "Black"
+        if(isRed) return "Red"
+        if(isGreen) return "Green"
+        return null
+    }
+}

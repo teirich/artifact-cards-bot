@@ -5,4 +5,5 @@ import com.sudo.artifact.model.card.Card
 interface CardRepository {
     fun isAValidCardName(name: String): Boolean
     fun getCard(name: String): Card?
+    fun getCard(id: Long): Card?
 }

@@ -9,6 +9,6 @@ ref_type: "includes",
 count: 3
 }
  */
-data class Reference(@SerializedName("card_id") val cardId: String,
+data class Reference(@SerializedName("card_id") val cardId: Long,
                      @SerializedName("ref_type") val refType: String,
                      @SerializedName("count") val count: Int)

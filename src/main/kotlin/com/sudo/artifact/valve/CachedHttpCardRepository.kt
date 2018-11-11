@@ -15,7 +15,8 @@ class CachedHttpCardRepository @Inject constructor(cacheLoader: HttpCardLoader) 
 
     override fun isAValidCardName(name: String): Boolean = getCard(name) != null
 
-    override fun getCard(name: String): Card? = getAllSeries().find { card -> name.toLowerCase() == card.cardName.english.toLowerCase() }
+    override fun getCard(name: String): Card?  = getAllSeries().find { card -> name.toLowerCase() == card.cardName.english.toLowerCase() }
+    override fun getCard(id: Long): Card?  = getAllSeries().find { card -> id == card.cardId }
 
     private fun getAllSeries(): List<Card> = allSeries.flatMap {s -> seriesToCardsCache[s]}
 }

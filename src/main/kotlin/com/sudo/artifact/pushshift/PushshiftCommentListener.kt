@@ -29,7 +29,8 @@ class PushshiftCommentListener @Inject constructor(private val pushshiftService:
     var _lastFetchSec = getCurrentTimeInSec()
 
     fun getCardsMentionedInComment(comment: Comment) : List<Card>{
-        return getAllOperatorMatches(comment.body).mapNotNull { match -> cardService.getCard(match) }.toList()
+        var matches = getAllOperatorMatches(comment.body)
+        return matches.mapNotNull { match -> cardService.getCard(match) }.toList()
     }
 
     override fun startListening(): Observable<CommentMatch> {
