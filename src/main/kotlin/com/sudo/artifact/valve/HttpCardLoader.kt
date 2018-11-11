@@ -11,6 +11,9 @@ import com.sudo.artifact.model.card.Card
 import com.sudo.artifact.model.card.CardSetMetadata
 import com.sudo.artifact.model.card.CardSetResponse
 
+/**
+ * https://github.com/ValveSoftware/ArtifactDeckCode
+ */
 class HttpCardLoader @Inject constructor(private val gson: Gson, private val httpRequestFactory: HttpRequestFactory)
     : CacheLoader<String, List<Card>>() {
 
