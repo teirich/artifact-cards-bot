@@ -1,0 +1,1 @@
+/Users/teirich/src/artifact-card-bot-reddit/build/classes/kotlin/main/com/sudo/artifact/AppKt.class
